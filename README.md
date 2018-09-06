@@ -26,7 +26,7 @@ We made a google survey with the following questions:
 
 ## 3-
 We then designed the database schema using draw.io and got the following:
-![DBSchema](https://i.imgur.com/xLmPiR4.png)
+![DBSchema](https://i.imgur.com/ryk2XOc.png)
 
 ## 4-
 For the RDBMS we choose Postgresql with pgAdmin and we installed it into a Debian 9 virtual machine.
@@ -37,7 +37,24 @@ To install Postgresql we just ran the apt-get command:
 
 And to configure the database for local and remote connections we followed (This instructions)[https://suite.opengeo.org/docs/latest/dataadmin/pgGettingStarted/firstconnect.html]
 
+
+Instead of installing and configuring pgAdmin, we used the docker image of pgAdmin to run it.
+```
+docker pull dpage/pgadmin4
+docker run -p 80:80 \
+-e "PGADMIN_DEFAULT_EMAIL=user@domain.com" \
+-e "PGADMIN_DEFAULT_PASSWORD=SuperSecret" \
+-d dpage/pgadmin4
+```
 ##5-
+
+To create the database and the tables, run the script with the following command ("postgres" in this case is the default username when installing postgresql :
+`psql -U postgres -f CreateDBTables.sql`
+
+This script creates a database named datamodeling with owner as postgres and all the tables.
+
+
+
 
 ##6-
 
