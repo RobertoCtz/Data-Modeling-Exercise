@@ -9,7 +9,7 @@ We divided this task into n steps
 4. Choose, install, and configurate a Relational Database Management System (RDBMS)
 5. Create database based on the previously designed database schema
 6. Write script to populate the database based on the online survey output (.csv file)
-7. How to see data?
+
 
 
 ## 1, 2-
@@ -46,7 +46,7 @@ docker run -p 80:80 \
 -e "PGADMIN_DEFAULT_PASSWORD=SuperSecret" \
 -d dpage/pgadmin4
 ```
-##5-
+## 5-
 
 To create the database and the tables, run the script with the following command ("postgres" in this case is the default username when installing postgresql :
 `psql -U postgres -f CreateDBTables.sql`
@@ -56,7 +56,7 @@ This script creates a database named datamodeling with owner as postgres and all
 
 
 
-##6-
+## 6-
 
 Because this is a one time database population with a relatively small dataset, instead of writing a script using a programming language, we used excel formulas to design the INSERTs.
 
